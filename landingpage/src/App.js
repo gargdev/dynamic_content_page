@@ -7,7 +7,12 @@ const App = () => {
   useEffect(() => {
     axios.get('https://dynamic-content-page.onrender.com/api/content').then(res => setContent(res.data));
   }, []);
-
+   useEffect(() => {
+    const interval = setInterval(() => {
+      axios.get('https://dynamic-content-page.onrender.com/api/content').then(res => setContent(res.data));
+    }, 5000); // Poll every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="bg-gray-100 min-h-screen">
       <header className="bg-blue-600 text-white p-6">
