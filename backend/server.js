@@ -15,6 +15,8 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 const contentRoutes = require('./routes/contentRoutes');
 app.use('/api/content', contentRoutes);
 
+// Use PORT from .env or fallback to 3000
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
