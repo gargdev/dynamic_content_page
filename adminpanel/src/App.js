@@ -19,7 +19,7 @@ const App = () => {
 
     if (editId) {
       axios
-        .post(`http://localhost:5000/api/content`, { ...payload, _id: editId })
+        .post(`https://dynamic-content-page.onrender.com/api/content`, { ...payload, _id: editId })
         .then(() => {
           setContent(content.map(item => (item._id === editId ? { ...item, ...payload } : item)));
           alert('Content updated!');
@@ -28,7 +28,7 @@ const App = () => {
         .catch(err => console.error(err));
     } else {
       axios
-        .post(`http://localhost:5000/api/content`, payload)
+        .post(`https://dynamic-content-page.onrender.com/api/content`, payload)
         .then(res => {
           setContent([...content, { ...res.data, ...payload }]);
           alert('Content added!');
