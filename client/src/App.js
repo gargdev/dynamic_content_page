@@ -5,7 +5,7 @@ const App = () => {
   const [content, setContent] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/content').then(res => setContent(res.data));
+    axios.get('https://dynamic-content-page.onrender.com/api/content').then(res => setContent(res.data));
   }, []);
 
   return (

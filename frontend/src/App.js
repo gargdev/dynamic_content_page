@@ -8,7 +8,7 @@ const App = () => {
   const [editId, setEditId] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/content').then(res => setContent(res.data));
+    axios.get('https://dynamic-content-page.onrender.com/api/content').then(res => setContent(res.data));
   }, []);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
