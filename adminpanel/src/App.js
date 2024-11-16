@@ -40,7 +40,7 @@ const App = () => {
 
   const handleDelete = (id) => {
     if (window.confirm('Are you sure you want to delete this content?')) {
-      axios.delete(`http://localhost:5000/api/content/${id}`)
+      axios.delete(`https://dynamic-content-page.onrender.com/api/content/${id}`)
         .then(() => {
           setContent(content.filter(item => item._id !== id));
           alert('Content deleted successfully!');
